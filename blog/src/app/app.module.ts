@@ -22,6 +22,7 @@ import { AuthInterceptor } from './services/auth.interceptor';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
+import { AddPostComponent } from './components/add-post/add-post.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +41,7 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
     LoginComponent,
     SignupComponent,
     NavbarComponent,
+    AddPostComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [

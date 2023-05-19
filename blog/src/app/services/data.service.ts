@@ -4,12 +4,12 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class DataService {
-  private url = 'http://localhost:3001/';
+  private url = 'http://localhost:3001';
   constructor(private http: HttpClient) {}
   getAll() {
-    return this.http.get(this.url + 'api/posts');
+    return this.http.get(this.url + '/api/posts');
   }
   getById(id: string) {
-    return this.http.get(this.url + 'api/posts/' + id);
+    return this.http.get(this.url + '/api/posts/' + id);
   }
 }

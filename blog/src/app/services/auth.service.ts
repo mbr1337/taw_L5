@@ -11,6 +11,7 @@ export class AuthService {
   private url = 'http://localhost:3001/api';
 
   constructor(private http: HttpClient) {}
+
   authenticate(credentials: any) {
     return this.http
       .post(this.url + '/user/auth', {
@@ -27,10 +28,12 @@ export class AuthService {
         })
       );
   }
-
   createOrUpdate(credentials: any) {
     console.log(credentials);
     return this.http.post(this.url + '/user/create', credentials);
+  }
+  addPost(postData: any) {
+    return this.http.post(this.url + '/addPost', postData);
   }
 
   logout() {

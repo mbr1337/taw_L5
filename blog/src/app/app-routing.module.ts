@@ -7,6 +7,7 @@ import { HomeComponent } from './components/home/home.component';
 import { AuthGuard } from './services/auth.guard';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
+import { AddPostComponent } from './components/add-post/add-post.component';
 
 const routes: Routes = [
   {
@@ -27,8 +28,12 @@ const routes: Routes = [
     component: LoginComponent,
   },
   {
-    path: 'signUp',
+    path: 'signup',
     component: SignupComponent,
+  },
+  {
+    path: 'add',
+    component: AddPostComponent,
   },
 ];
 
