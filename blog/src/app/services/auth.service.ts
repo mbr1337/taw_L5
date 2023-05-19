@@ -32,9 +32,6 @@ export class AuthService {
     console.log(credentials);
     return this.http.post(this.url + '/user/create', credentials);
   }
-  addPost(postData: any) {
-    return this.http.post(this.url + '/addPost', postData);
-  }
 
   logout() {
     return this.http
@@ -57,6 +54,7 @@ export class AuthService {
 
   get currentUser() {
     const token = this.getToken();
+    console.log(token);
     if (!token) {
       return null;
     }

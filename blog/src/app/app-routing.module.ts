@@ -34,6 +34,7 @@ const routes: Routes = [
   {
     path: 'add',
     component: AddPostComponent,
+    canActivate: [AuthGuard],
   },
 ];
 

@@ -12,4 +12,8 @@ export class DataService {
   getById(id: string) {
     return this.http.get(this.url + '/api/posts/' + id);
   }
+  addPost(postData: any) {
+    console.log(postData);
+    return this.http.post(this.url + '/api/addPost', postData);
+  }
 }

@@ -20,10 +20,10 @@ export class AuthInterceptor implements HttpInterceptor {
     const auth = this.injector.get(AuthService);
     request = request.clone({
       setHeaders: {
-        'x-auth-token': `Bearer ${auth.getToken()}`,
+        // 'x-auth-token': `Bearer ${auth.getToken()}`,
+        'x-auth-token': `${auth.getToken()}`,
       },
     });
-
     return next.handle(request);
   }
 }

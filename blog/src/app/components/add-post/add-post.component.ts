@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/services/auth.service';
+import { DataService } from 'src/app/services/data.service';
 import { Router } from '@angular/router';
 @Component({
   selector: 'add-post',
@@ -14,21 +14,19 @@ export class AddPostComponent {
   };
   public logged?: boolean;
   public logout?: boolean;
-  constructor(public authService: AuthService, private router: Router) {}
+  constructor(public dataService: DataService, private router: Router) {}
 
   ngOnInit(): void {}
   sendPost() {
-    this.authService.addPost(this.data).subscribe(
+    this.dataService.addPost(this.data).subscribe(
       (result) => {
         if (!result) {
           this.logged = false;
         } else {
           this.logout = false;
-          this.data = {
-            title: '',
-            imgURL: '',
-            text: '',
-          };
+          this.data.title = '';
+          this.data.imgURL = '';
+          this.data.text = '';
           this.router.navigate(['/']);
         }
       },
