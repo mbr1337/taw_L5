@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 @Injectable({
   providedIn: 'root',
@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 export class DataService {
   private url = 'http://localhost:3001';
   constructor(private http: HttpClient) {}
+  postDeleted = new EventEmitter<number>();
   getAll() {
     return this.http.get(this.url + '/api/posts');
   }
@@ -15,5 +16,9 @@ export class DataService {
   addPost(postData: any) {
     console.log(postData);
     return this.http.post(this.url + '/api/addPost', postData);
+  }
+  removePost(id: number) {
+    this.postDeleted.emit(id);
+    return this.http.delete(this.url + '/api/removePost/' + id);
   }
 }

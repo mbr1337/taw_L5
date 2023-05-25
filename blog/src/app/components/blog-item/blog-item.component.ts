@@ -6,7 +6,17 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./blog-item.component.css'],
 })
 export class BlogItemComponent {
+  @Input() title?: string;
   @Input() image?: string;
   @Input() text?: string;
   @Input() id?: number;
+  imageLoaded: boolean = false;
+
+  ngOnChanges() {
+    this.imageLoaded = false;
+  }
+  imageLoad() {
+    this.imageLoaded = true;
+  }
+  
 }

@@ -27,11 +27,11 @@ export class AddPostComponent {
           this.data.title = '';
           this.data.imgURL = '';
           this.data.text = '';
-          this.router.navigate(['/']);
+          this.router.navigate(['/blog']);
         }
       },
       (error) => {
-        console.log(error);
+        console.log('error: ', error);
       }
     );
   }

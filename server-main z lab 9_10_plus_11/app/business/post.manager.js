@@ -21,11 +21,15 @@ function create(context) {
             return result;
         }
     }
+    async function deleteById(id) {
+        return postDAO.deleteById(id);
+    }
 
     return {
         query: query,
         get: get,
         createNewOrUpdate: createNewOrUpdate,
+        deleteById: deleteById,
     };
 }
 

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -12,10 +12,19 @@ export class BlogComponent implements OnInit {
   constructor(private service: DataService) {}
   ngOnInit() {
     this.getAll();
+    this.service.postDeleted.subscribe((postId: number) => {
+      console.log('Post deleted:', postId);
+      this.items$ = this.items$.filter((item: any) => item.id !== postId);
+      // Refresh the component after post deletion
+      // this.refreshComponent();
+    });
   }
   getAll() {
     this.service.getAll().subscribe((response) => {
       this.items$ = response;
     });
+  }
+  refreshComponent() {
+    this.getAll();
   }
 }

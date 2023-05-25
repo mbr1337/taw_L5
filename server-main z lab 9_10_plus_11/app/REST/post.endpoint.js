@@ -24,13 +24,22 @@ const postEndpoint = (router) => {
             response.status(500).send('Internal Server Error');
         }
     });
-
     router.post('/api/addPost', async (request, response, next) => {
         try {
             let result = await business.getPostManager().createNewOrUpdate(request.body);
             response.status(200).send(result);
         } catch (error) {
             console.log(error);
+        }
+    });
+    router.delete('/api/removePost/:id', async (request, response, next) => {
+        try {
+            const postId = request.params.id;
+            const result = await business.getPostManager().deleteById(postId);
+            response.status(200).send(result);
+        } catch (error) {
+            console.log(error);
+            response.status(500).send(error);
         }
     });
 

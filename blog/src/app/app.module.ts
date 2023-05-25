@@ -23,6 +23,8 @@ import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { AddPostComponent } from './components/add-post/add-post.component';
+import { BlogTitleComponent } from './components/blog-title/blog-title.component';
+import { BlogEditComponent } from './components/blog-edit/blog-edit.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,6 +44,8 @@ import { AddPostComponent } from './components/add-post/add-post.component';
     SignupComponent,
     NavbarComponent,
     AddPostComponent,
+    BlogTitleComponent,
+    BlogEditComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [

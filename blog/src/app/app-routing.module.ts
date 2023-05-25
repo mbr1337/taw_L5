@@ -8,6 +8,7 @@ import { AuthGuard } from './services/auth.guard';
 import { LoginComponent } from './components/login/login.component';
 import { SignupComponent } from './components/signup/signup.component';
 import { AddPostComponent } from './components/add-post/add-post.component';
+import { BlogEditComponent } from './components/blog-edit/blog-edit.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
   {
     path: 'blog/detail/:id',
     component: BlogItemDetailsComponent,
+  },
+  {
+    path: 'blog/edit/:id',
+    component: BlogEditComponent,
   },
   {
     path: 'login',

@@ -4,11 +4,11 @@ import mongoConverter from '../service/mongoConverter';
 import * as _ from "lodash";
 
 const postSchema = new mongoose.Schema({
-    title: {type: String},
-    image: {type: String},
-    text: {type: String},
+    title: { type: String },
+    imgURL: { type: String },
+    text: { type: String },
 }, {
-    collection: '34272-post'
+    collection: 'post'
 });
 postSchema.plugin(uniqueValidator);
 
@@ -24,7 +24,7 @@ async function query() {
 }
 
 async function get(id) {
-    return PostModel.findOne({_id: id}).then(function (result) {
+    return PostModel.findOne({ _id: id }).then(function (result) {
         if (result) {
             return mongoConverter(result);
         }
@@ -41,15 +41,19 @@ async function createNewOrUpdate(data) {
                 }
             });
         } else {
-            return PostModel.findByIdAndUpdate(data.id, _.omit(data, 'id'), {new: true});
+            return PostModel.findByIdAndUpdate(data.id, _.omit(data, 'id'), { new: true });
         }
     });
+}
+
+async function deleteById(id) {
+    return PostModel.findByIdAndDelete(id);
 }
 
 export default {
     query: query,
     get: get,
     createNewOrUpdate: createNewOrUpdate,
-
+    deleteById: deleteById,
     model: PostModel
 };

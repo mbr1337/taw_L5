@@ -8,7 +8,7 @@ const passwordSchema = new mongoose.Schema({
   userId: { type: mongoose.Schema.Types.ObjectId, ref: 'user', required: true, unique: true },
   password: { type: String, required: true }
 }, {
-  collection: '34272-password'
+  collection: 'password'
 });
 
 const PasswordModel = mongoose.model('password', passwordSchema);
