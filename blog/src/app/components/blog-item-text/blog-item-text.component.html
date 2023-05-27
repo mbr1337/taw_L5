@@ -17,8 +17,7 @@
   <a
     href="#"
     class="btn btn-danger p-2 m-2"
-    (click)="deletePost()"
-    [routerLink]="['/blog']"
+    (click)="deletePost(); $event.preventDefault()"
   >
     Usuń
   </a>
