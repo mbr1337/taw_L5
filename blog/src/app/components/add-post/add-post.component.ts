@@ -12,18 +12,14 @@ export class AddPostComponent {
     imgURL: '',
     text: '',
   };
-  public logged?: boolean;
-  public logout?: boolean;
   constructor(public dataService: DataService, private router: Router) {}
 
-  ngOnInit(): void {}
   sendPost() {
     this.dataService.addPost(this.data).subscribe(
       (result) => {
-        if (!result) {
-          this.logged = false;
+        if (result === null || result === undefined) {
+          console.log('Data error. Data is either null or undefined');
         } else {
-          this.logout = false;
           this.data.title = '';
           this.data.imgURL = '';
           this.data.text = '';
@@ -31,7 +27,7 @@ export class AddPostComponent {
         }
       },
       (error) => {
-        console.log('error: ', error);
+        console.log('Error:', error);
       }
     );
   }

@@ -42,6 +42,16 @@ const postEndpoint = (router) => {
             response.status(500).send(error);
         }
     });
+    router.put('/api/editPost/:id', async (request, response, next) => {
+        try {
+            const postId = request.params.id;
+            const result = await business.getPostManager().createNewOrUpdate(request.body);
+            response.status(200).send(result);
+        } catch (error) {
+            console.log(error);
+            response.status(500).send(error);
+        }
+    });
 
 };
 export default postEndpoint;

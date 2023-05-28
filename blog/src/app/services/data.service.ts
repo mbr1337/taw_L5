@@ -19,6 +19,10 @@ export class DataService {
     console.log(postData);
     return this.http.post(this.url + '/api/addPost', postData);
   }
+  editPost(postData: any, id: string) {
+    console.log(postData);
+    return this.http.put(this.url + '/api/editPost/' + id, postData);
+  }
   // Metoda .pipe() w Angular służy do łączenia wielu operatorów razem w celu utworzenia łańcucha operacji na obserwowalnym strumieniu.
   // Każdy operator w łańcuchu wykonuje określone zadanie lub transformację danych emitowanych przez obiekt observable.
   // tutaj .pipe() służy do łączenia operatorów w łańcuchy i wykonywania dodatkowych akcji po wysłaniu żądania HTTP DELETE.

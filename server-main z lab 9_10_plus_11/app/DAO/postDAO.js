@@ -32,16 +32,25 @@ async function get(id) {
 }
 
 async function createNewOrUpdate(data) {
-    console.log(data);
     return Promise.resolve().then(() => {
         if (!data.id) {
-            return new PostModel(data).save().then(result => {
-                if (result[0]) {
-                    return mongoConverter(result[0]);
-                }
-            });
+            return new PostModel(data)
+                .save()
+                .then(result => {
+                    if (result) {
+                        return mongoConverter(result);
+                    }
+                    throw new Error('Failed to save post');
+                });
         } else {
-            return PostModel.findByIdAndUpdate(data.id, _.omit(data, 'id'), { new: true });
+            return PostModel.findByIdAndUpdate(data.id, _.omit(data, 'id'), { new: true })
+                .exec()
+                .then(result => {
+                    if (result) {
+                        return mongoConverter(result);
+                    }
+                    throw new Error('Failed to update post');
+                });
         }
     });
 }
