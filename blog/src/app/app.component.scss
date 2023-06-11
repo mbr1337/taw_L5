@@ -6,3 +6,9 @@
     opacity: 1;
   }
 }
+nav,
+.container,
+.card-container,
+.card {
+  animation: fadeIn 1s;
+}

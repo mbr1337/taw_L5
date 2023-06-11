@@ -4,7 +4,7 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'blog',
   templateUrl: './blog.component.html',
-  styleUrls: ['./blog.component.scss'],
+  styleUrls: ['./blog.component.scss', '../../app.component.scss'],
 })
 export class BlogComponent implements OnInit, OnDestroy {
   @Input() filterText: string = '';

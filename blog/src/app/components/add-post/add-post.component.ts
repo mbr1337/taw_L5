@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'add-post',
   templateUrl: './add-post.component.html',
-  styleUrls: ['./add-post.component.scss'],
+  styleUrls: ['./add-post.component.scss','../../app.component.scss'],
 })
 export class AddPostComponent {
   public data = {

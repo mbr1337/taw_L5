@@ -4,7 +4,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'blog-edit',
   templateUrl: './blog-edit.component.html',
-  styleUrls: ['./blog-edit.component.scss'],
+  styleUrls: ['./blog-edit.component.scss', '../../app.component.scss'],
 })
 export class BlogEditComponent {
   public data = {

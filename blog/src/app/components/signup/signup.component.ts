@@ -5,7 +5,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'signup',
   templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.scss'],
+  styleUrls: ['./signup.component.scss', '../../app.component.scss'],
 })
 export class SignupComponent {
   public credentials = {
