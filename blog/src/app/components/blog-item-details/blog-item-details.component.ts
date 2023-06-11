@@ -5,7 +5,7 @@ import { DataService } from '../../services/data.service';
 @Component({
   selector: 'blog-item-details',
   templateUrl: './blog-item-details.component.html',
-  styleUrls: ['./blog-item-details.component.css'],
+  styleUrls: ['./blog-item-details.component.scss'],
 })
 export class BlogItemDetailsComponent implements OnInit {
   public image: string = '';

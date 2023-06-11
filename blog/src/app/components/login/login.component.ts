@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
+  styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
   public credentials = {
@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
             login: '',
             password: '',
           };
-          this.router.navigate(['/']);
+          this.router.navigate(['/blog']);
         }
       });
   }

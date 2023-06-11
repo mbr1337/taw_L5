@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'blog-item-text',
   templateUrl: './blog-item-text.component.html',
-  styleUrls: ['./blog-item-text.component.css'],
+  styleUrls: ['./blog-item-text.component.scss'],
 })
 export class BlogItemTextComponent {
   @Input() text?: string;

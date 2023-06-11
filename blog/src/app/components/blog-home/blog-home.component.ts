@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'blog-home',
   templateUrl: './blog-home.component.html',
-  styleUrls: ['./blog-home.component.css'],
+  styleUrls: ['./blog-home.component.scss'],
 })
 export class BlogHomeComponent implements OnInit {
   public filterText: string = '';
