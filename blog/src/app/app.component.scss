@@ -1,0 +1,19 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+nav,
+.container,
+.card-container,
+.card {
+  animation: fadeIn 1s;
+}
+.centered-date {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

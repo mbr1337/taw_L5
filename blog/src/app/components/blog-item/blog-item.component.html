@@ -1,0 +1,11 @@
+<div class="card m-2" style="width: 25rem">
+  <blog-title [title]="title"></blog-title>
+  <blog-item-image
+    [image]="image"
+    class="card-img-top d-flex justify-content-center"
+    (load)="imageLoad()"
+  ></blog-item-image>
+  <div class="card-body">
+    <blog-item-text [text]="text" [id]="id"></blog-item-text>
+  </div>
+</div>
