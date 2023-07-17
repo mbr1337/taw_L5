@@ -12,3 +12,8 @@ nav,
 .card {
   animation: fadeIn 1s;
 }
+.centered-date {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
